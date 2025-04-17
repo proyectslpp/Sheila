@@ -1134,10 +1134,9 @@
           </div>
           
           <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/sheilarodero_gym"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@sheilaroderofitt"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@sheilarodero"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         
@@ -1163,12 +1162,12 @@
               <label for="service">Servicio de Interés</label>
               <select id="service" name="service" class="form-control" required>
                 <option value="">Selecciona un servicio</option>
-                <option value="personal">Entrenamiento Personal</option>
-                <option value="group">Entrenamiento en Grupo</option>
-                <option value="nutrition">Asesoramiento Nutricional</option>
-                <option value="online">Entrenamiento Online</option>
-                <option value="weight-loss">Pérdida de Peso</option>
-                <option value="muscle-gain">Ganancia Muscular</option>
+                <option value="personal">Servicio 1</option>
+                <option value="group">Servicio 2</option>
+                <option value="nutrition">Servicio 3</option>
+                <option value="online">Servicio 4</option>
+                <option value="weight-loss">Servicio 5</option>
+                <option value="muscle-gain">Servicio 6</option>
               </select>
             </div>
             
@@ -1243,14 +1242,11 @@
     </div>
   </footer>
 
-  <!-- Scroll Top Button -->
   <div class="scroll-top">
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <!-- Scripts -->
   <script>
-    // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
@@ -1258,7 +1254,6 @@
       navLinks.classList.toggle('active');
     });
     
-    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1271,7 +1266,6 @@
       });
     });
     
-    // Scroll Top Button
     const scrollTopBtn = document.querySelector('.scroll-top');
     
     window.addEventListener('scroll', () => {
@@ -1316,13 +1310,7 @@
       }
     });
 
-    // Función para cargar reseñas de Google
     function loadGoogleReviews() {
-      // Normalmente aquí irían llamadas a la API de Google para obtener reseñas
-      // Como alternativa, puedes implementar un sistema de backend que obtenga las reseñas
-      // y las almacene en tu servidor o usar un servicio de terceros
-      
-      // Este es un ejemplo de cómo procesar las reseñas cuando las tienes:
       function addReviewToSlider(review) {
         const slider = document.querySelector('.testimonial-slider');
         
@@ -1360,11 +1348,9 @@
         
         slider.appendChild(card);
         
-        // Adjust slider width
         const totalCards = slider.children.length;
         slider.style.width = (totalCards * 100) + '%';
         
-        // Update keyframes
         const styleSheet = document.styleSheets[0];
         for (let i = 0; i < styleSheet.cssRules.length; i++) {
           const rule = styleSheet.cssRules[i];
@@ -1387,14 +1373,10 @@
         }
       }
       
-      // Ejemplo: comprueba periódicamente nuevas reseñas (en un entorno real, esto sería diferente)
       setInterval(() => {
-        // Simulación: comprobar si hay nuevas reseñas
-        // En la implementación real, esto sería una llamada a la API o a tu backend
-      }, 60000); // Comprobar cada minuto
+      }, 60000);
     }
     
-    // Iniciar carga de reseñas cuando la página esté completamente cargada
     window.addEventListener('load', loadGoogleReviews);
   </script>
 </body>

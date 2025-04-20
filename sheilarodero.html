@@ -754,7 +754,6 @@
       margin-right: 10px;
     }
 
-    /* Testimonial Carousel Styles */
     .testimonial-carousel {
       position: relative;
       overflow: hidden;
@@ -764,7 +763,7 @@
     .testimonial-slider {
       display: flex;
       transition: transform 0.5s ease;
-      width: 300%; /* Adjust based on number of testimonials */
+      width: 300%;
       animation: slideTestimonials 30s infinite linear;
     }
 
@@ -777,7 +776,7 @@
 
     .testimonial-slider .testimonial-card {
       flex: 1;
-      min-width: 33.33%; /* Adjust based on how many you want visible */
+      min-width: 33.33%;
       padding: 0 15px;
       box-sizing: border-box;
     }
@@ -786,7 +785,6 @@
       animation-play-state: paused;
     }
 
-    /* YouTube Testimonials */
     .youtube-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -796,7 +794,7 @@
 
     .youtube-video {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       border-radius: 10px;
@@ -835,47 +833,106 @@
     }
 
     .google-reviews-container {
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  /* Estilo para ajustar el widget de Elfsight al tema del sitio */
-  .google-reviews-container iframe {
-    width: 100%;
-    border: none;
-  }
-  
-  /* Estilos responsivos para el widget */
-  @media (max-width: 768px) {
-    .google-reviews-container {
-      padding: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto;
     }
-  }
-  
-  /* Opción alternativa: Estilo para el widget de Widget Pack */
-  .wp-gr .wp-google-badge {
-    display: inline-block;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 14px;
-    line-height: 1.6;
-    background: var(--primary);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin-top: 15px;
-  }
-  
-  .wp-gr .wp-google-badge:hover {
-    background: #ff4f4f;
-  }
     
+    .google-reviews-container iframe {
+      width: 100%;
+      border: none;
+    }
+    
+    @media (max-width: 768px) {
+      .google-reviews-container {
+        padding: 15px;
+      }
+    }
+    
+    .wp-gr .wp-google-badge {
+      display: inline-block;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      line-height: 1.6;
+      background: var(--primary);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-top: 15px;
+    }
+    
+    .wp-gr .wp-google-badge:hover {
+      background: #ff4f4f;
+    }
+
+    .testimonial-carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .testimonial-card {
+      width: 100%;
+      flex: 0 0 100%;
+      padding: 30px;
+      box-sizing: border-box;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-text {
+      flex-grow: 1;
+      position: relative;
+      overflow: hidden;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      max-height: 150px;
+      transition: max-height 0.3s ease;
+    }
+
+    .testimonial-text.expanded {
+      max-height: 500px;
+    }
+
+    .testimonial-text.truncated::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: linear-gradient(transparent, rgba(44, 62, 80, 0.9));
+    }
+
+    .btn-blue {
+      background: var(--secondary);
+      color: white;
+      border: 2px solid var(--secondary);
+    }
+
+    .btn-blue:hover {
+      background: transparent;
+      color: var(--secondary);
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container">
       <nav>
@@ -897,24 +954,23 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" id="inicio">
     <div class="container">
       <div class="hero-content">
-        <h1>Transforma tu cuerpo, mejora tu vida</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+        <h1>Activa tu cuerpo, nutre tu alma, transforma tu vida.</h1>
+        <p>Soy Sheila Rodero, guía en transformación física, emocional y energética. En mi centro trabajamos contigo para que eleves tu bienestar a todos los niveles: cuerpo, mente y conciencia.</p>
+
         <a href="#contacto" class="btn btn-primary btn-pulse">Consulta Gratuita</a>
         <a href="#servicios" class="btn btn-secondary">Mis Servicios</a>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
   <section class="about" id="sobre-mi">
     <div class="container">
       <div class="section-header">
         <h2>Sobre Mí</h2>
-        <p>Conoce a la persona que te ayudará a transformar tu vida a través del fitness</p>
+        <p>Conoce a la persona que te ayudará a transformar tu vida</p>
       </div>
       <div class="about-content">
         <div class="about-img">
@@ -922,99 +978,150 @@
         </div>
         <div class="about-text">
           <h3>Hola, soy Sheila Rodero</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p>Soy entrenadora personal con más de 25 años de experiencia en el mundo del entrenamiento y la transformación integral. A lo largo de estas dos décadas he acompañado a cientos de personas a recuperar su energía, su bienestar y su conexión interior.</p>
+          <p>Soy fundadora del Centro de Entrenamiento y Formación Integral que lleva mi nombre. Un espacio donde combinamos tres pilares fundamentales:</p>
+          
+          <ul>
+            <li>Entrenamiento físico consciente</li>
+            <li>Nutrición con propósito</li>
+            <li>Elevación de conciencia</li>
+          </ul>
+
+          <p>Mi misión es ayudarte a recordar quién eres, desde el cuerpo hacia el alma. Porque el entrenamiento no es solo físico; es una puerta para transformar tu vida desde adentro.</p>
+          <p>Soy madre, emprendedora, formadora y mujer en constante evolución. He vivido mis propios procesos de sanación y expansión, y eso me permite acompañarte desde la empatía, la experiencia y la verdad.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
   <section class="services" id="servicios">
     <div class="container">
       <div class="section-header">
         <h2>Mis Servicios</h2>
-        <p>Descubre cómo puedo ayudarte a alcanzar tus objetivos fitness</p>
+        <p>Descubre cómo puedo ayudarte a alcanzar tus objetivos</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <i class="fas fa-running"></i>
-          <h3>Servicio 1</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-users"></i>
-          <h3>Servicio 2</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <h3>Entrenamiento físico funcional y consciente</h3>
+          <p>Entrenamos con presencia, con respeto al cuerpo y con el objetivo de aumentar tu energía vital.</p>
         </div>
         <div class="service-card">
           <i class="fas fa-apple-alt"></i>
-          <h3>Servicio 3</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <h3>Nutrición integrativa</h3>
+          <p>No creemos en dietas, creemos en una forma de nutrirte que respete tu cuerpo, tus emociones y tu ritmo de vida.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-laptop"></i>
-          <h3>Servicio 4</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-weight"></i>
-          <h3>Servicio 5</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-dumbbell"></i>
-          <h3>Servicio 6</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div>
+          <i class="fas fa-spa"></i>
+          <h3>Elevación de conciencia</h3>
+          <p>Formaciones, talleres y sesiones que te ayudan a liberar bloqueos, sanar heridas y vivir con más paz y coherencia.</p>
+        </div>        
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials" id="testimonios">
+  <section class="cta-experiencia" style="background-color: var(--light); padding: 80px 0; text-align: center;">
     <div class="container">
       <div class="section-header">
-        <h2>Testimonios</h2>
-        <p>Lo que dicen mis clientes sobre su experiencia trabajando conmigo</p>
+        <h2>Una experiencia que transforma desde el primer paso</h2>
+        <p>Aquí no vienes solo a entrenar. Vienes a reconectar contigo, a despertar tu fuerza interna y a crear una vida más libre, alineada y plena.</p>
       </div>
-      
-      <!-- Widget de reseñas de Google -->
-      <div class="google-reviews-container">
-        <!-- Elfsight Widget (versión gratuita) -->
-        <script src="https://static.elfsight.com/platform/platform.js" async></script>
-        <div class="elfsight-app-d527a9d6-7789-42bd-a4e2-02122479f73c" data-elfsight-app-lazy></div>
-      
-      <!-- YouTube Testimonials -->
-      <div class="section-header" style="margin-top: 60px;">
-        <h3>Videos de Clientes</h3>
+      <div style="margin-top: 30px;">
+        <a href="#contacto" class="btn btn-primary" style="margin: 10px;">Reserva una sesión de valoración gratuita</a>
       </div>
-      
-      <div class="youtube-testimonials">
-        <div class="youtube-grid">
-          <div class="youtube-video">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/EfLMqwYAFpA?si=nwAC-Im_B1KENUz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>  
+
+    <section class="testimonials" id="testimonios">
+      <div class="container">
+        <div class="section-header">
+          <h2>Testimonios</h2>
+          <p>Lo que dicen mis clientes sobre su experiencia trabajando conmigo</p>
+        </div>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">Entreno con Sheila desde hace casi 4 años. Me ha motivado, he mejorado físicamente y me siento bien conmigo misma. Es una entrenadora increíble, que te apoya tanto física como mentalmente. Justo lo que necesitaba.</p>
+            <div class="testimonial-author">
+              <img src="items/Fotos/Equipo_De_Viaje.png" alt="Cliente">
+              <div class="author-info">
+                <h4>Equipo de Viaje</h4>  
+              </div>
+            </div>
           </div>
-          <div class="youtube-video">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/n0LtaIWH_I0?si=nPwL7N6NitkzVEnJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="testimonial-card">
+            <p class="testimonial-text">Llevo entrenando cinco años donde Sheila es totalmente diferente al ser más humano el cambio físico y psicológico es notable y ella es una gran profesional que la gusta y disfruta con su trabajo y se lo transmite a sus alumnos.</p>
+            <div class="testimonial-author">
+              <img src="items/Fotos/E.jpg" alt="Cliente">
+              <div class="author-info">
+                <h4>Elisa Lopez Torrejon</h4>
+              </div>
+            </div>
           </div>
-          <div class="youtube-video">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/U7VNhCooQBQ?si=HAn_nRMqF4CQIHGN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="testimonial-card">
+            <p class="testimonial-text">Sheila es una entrenadora muy completa. Sabe motivarte y lo que necesitas en cada momento tanto física como emocionalmente para cumplir tus objetivos.</p>
+            <div class="testimonial-author">
+              <img src="items/Fotos/K.png" alt="Cliente">
+              <div class="author-info">
+                <h4>Kina</h4>
+              </div>
+            </div>
           </div>
-          <div class="youtube-video">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/p0Gzw2f1Qkc?si=qxc9BIuP9WxT_6Wh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="testimonial-card">
+            <p class="testimonial-text">Tres años de entrenamiento con Sheila, una gran profesional, super preparada. Muy simpática y preocupada por todos sus alumnos</p>
+            <div class="testimonial-author">
+              <img src="items/Fotos/M.jpg" alt="Cliente">
+              <div class="author-info">
+                <h4>MARI CARMEN UREÑA</h4>
+              </div>
+            </div>
           </div>
-          <div class="youtube-video">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/52ybVHuVB3M?si=sI5UR2Vz3qN1tw0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="testimonial-card">
+            <p class="testimonial-text">Trato inmejorable, las clases son duras pero no lo parece por el buen rollo que hay, encantada.</p>
+            <div class="testimonial-author">
+              <img src="items/Fotos/G.png" alt="Cliente">
+              <div class="author-info">
+                <h4>Gema L</h4>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">Escuela de entrenamiento espectacular dirigido por una profesional muy cualificada y excelente, con un trato personalizado.</p>
+            <div class="testimonial-author">
+              <img src="items/Fotos/A.jpg" alt="Cliente">
+              <div class="author-info">
+                <h4>Alba Martin Brito</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 60px;">
+          <h3>Videos de Clientes</h3>
+        </div>
+        
+        <div class="youtube-testimonials">
+          <div class="youtube-grid">
+            <div class="youtube-video">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/EfLMqwYAFpA?si=nwAC-Im_B1KENUz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="youtube-video">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/n0LtaIWH_I0?si=nPwL7N6NitkzVEnJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="youtube-video">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/U7VNhCooQBQ?si=HAn_nRMqF4CQIHGN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="youtube-video">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/p0Gzw2f1Qkc?si=qxc9BIuP9WxT_6Wh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="youtube-video">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/52ybVHuVB3M?si=sI5UR2Vz3qN1tw0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- Pricing Section -->
   <section class="pricing" id="precios">
     <div class="container">
       <div class="section-header">
@@ -1035,7 +1142,7 @@
               <li>Reserva de plaza garantizada</li>
               <li>Acceso a 2 sesiones semanales</li>
             </ul>
-            <a href="#contacto" class="btn btn-secondary">Empezar Ahora</a>
+            <a href="#contacto" class="btn btn-blue">Empezar Ahora</a>
           </div>
         </div>
         <div class="pricing-card featured">
@@ -1050,7 +1157,6 @@
               <li>Clase suelta: 5€</li>
               <li>Reserva de plaza garantizada</li>
               <li>Acceso a 3 sesiones semanales</li>
-              <li>Mayor progresión de resultados</li>
             </ul>
             <a href="#contacto" class="btn btn-primary">Empezar Ahora</a>
           </div>
@@ -1069,7 +1175,7 @@
               <li>Duración: 1 mes desde compra</li>
               <li>Cancelación con 24h de antelación</li>
             </ul>
-            <a href="#contacto" class="btn btn-secondary">Empezar Ahora</a>
+            <a href="#contacto" class="btn btn-blue">Empezar Ahora</a>
           </div>
         </div>
       </div>
@@ -1081,7 +1187,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact" id="contacto">
     <div class="container">
       <div class="section-header">
@@ -1141,8 +1246,7 @@
         </div>
         
         <div class="contact-form">
-          <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE">
+          <form action="https://formspree.io/f/tu-id-de-formspree" method="POST">
             <div class="form-group">
               <label for="name">Nombre Completo</label>
               <input type="text" id="name" name="name" class="form-control" required>
@@ -1162,12 +1266,9 @@
               <label for="service">Servicio de Interés</label>
               <select id="service" name="service" class="form-control" required>
                 <option value="">Selecciona un servicio</option>
-                <option value="personal">Servicio 1</option>
-                <option value="group">Servicio 2</option>
-                <option value="nutrition">Servicio 3</option>
-                <option value="online">Servicio 4</option>
-                <option value="weight-loss">Servicio 5</option>
-                <option value="muscle-gain">Servicio 6</option>
+                <option value="personal">Entrenamieanto físico funcional y consciente</option>
+                <option value="nutrition">Nutrición integrativa</option>
+                <option value="group">Elevación de conciencia</option>
               </select>
             </div>
             
@@ -1183,7 +1284,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
@@ -1282,7 +1382,6 @@
       });
     });
     
-    // Form Submission with Web3Forms
     const form = document.querySelector('.contact-form form');
     
     form.addEventListener('submit', async (e) => {
@@ -1309,74 +1408,6 @@
       }
     });
 
-    function loadGoogleReviews() {
-      function addReviewToSlider(review) {
-        const slider = document.querySelector('.testimonial-slider');
-        
-        const card = document.createElement('div');
-        card.className = 'testimonial-card';
-        
-        const text = document.createElement('p');
-        text.className = 'testimonial-text';
-        text.textContent = review.text;
-        
-        const author = document.createElement('div');
-        author.className = 'testimonial-author';
-        
-        const img = document.createElement('img');
-        img.src = review.profilePhoto || 'items/Fotos/default-avatar.png';
-        img.alt = review.author;
-        
-        const info = document.createElement('div');
-        info.className = 'author-info';
-        
-        const name = document.createElement('h4');
-        name.textContent = review.author;
-        
-        const date = document.createElement('p');
-        date.textContent = review.date;
-        
-        info.appendChild(name);
-        info.appendChild(date);
-        
-        author.appendChild(img);
-        author.appendChild(info);
-        
-        card.appendChild(text);
-        card.appendChild(author);
-        
-        slider.appendChild(card);
-        
-        const totalCards = slider.children.length;
-        slider.style.width = (totalCards * 100) + '%';
-        
-        const styleSheet = document.styleSheets[0];
-        for (let i = 0; i < styleSheet.cssRules.length; i++) {
-          const rule = styleSheet.cssRules[i];
-          if (rule.name === 'slideTestimonials') {
-            styleSheet.deleteRule(i);
-            const percentage = 100 / totalCards;
-            let keyframes = `@keyframes slideTestimonials {
-              0% { transform: translateX(0); }`;
-            
-            for (let j = 1; j < totalCards; j++) {
-              keyframes += `${j * percentage}% { transform: translateX(-${j * percentage}%); }`;
-            }
-            
-            keyframes += `100% { transform: translateX(0); }
-            }`;
-            
-            styleSheet.insertRule(keyframes, i);
-            break;
-          }
-        }
-      }
-      
-      setInterval(() => {
-      }, 60000);
-    }
-    
-    window.addEventListener('load', loadGoogleReviews);
   </script>
 </body>
 </html>

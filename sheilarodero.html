@@ -8,11 +8,11 @@
   <link rel="icon" type="image/x-icon" href="items/Fotos/Favicon.png">
   <style>
     :root {
-      --primary: #ff6b6b;
-      --secondary: #546de5;
-      --dark: #2c3e50;
-      --light: #f9f9f9;
-      --accent: #32e0c4;
+      --primary: #4A90E2;
+      --secondary: #50B3A2;
+      --dark: #333333;
+      --light: #ffffff;
+      --accent: #7986CB;
     }
     
     * {
@@ -35,12 +35,31 @@
     }
     
     header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
+      background: linear-gradient(135deg, #ffffff, #f7f7f7);
+      color: var(--dark);
       position: fixed;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgb(252, 251, 251);
+    }
+
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
     }
     
     nav {
@@ -71,7 +90,7 @@
     }
     
     .nav-links a {
-      color: white;
+      color: rgb(51, 50, 50);
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
@@ -83,7 +102,7 @@
       position: absolute;
       width: 0;
       height: 2px;
-      background: white;
+      background: rgb(51, 50, 50);
       bottom: -5px;
       left: 0;
       transition: width 0.3s ease;
@@ -115,12 +134,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(84,109,229,0.7));
+      background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(247,247,247,0.8));
     }
-    
+
     .hero-content {
       position: relative;
-      color: white;
+      color: var(--dark);
       max-width: 600px;
       padding: 0 20px;
       animation: fadeIn 1s ease-in-out;
@@ -250,10 +269,16 @@
     }
     
     .about-text p {
-      margin-bottom: 15px;
-      line-height: 1.6;
+      margin-bottom: 25px;
+      line-height: 1.8;
       color: #555;
     }
+
+    .about-text ul {
+      margin-bottom: 25px;
+    }
+
+
     
     .services {
       background: #f1f5f9;
@@ -314,50 +339,44 @@
     }
     
     .testimonials {
-      background: var(--dark);
-      color: white;
+      background: #f8f9fa;
+      color: var(--dark);
     }
-    
+
     .testimonials .section-header h2 {
-      color: white;
+      color: var(--dark);
     }
-    
+
     .testimonials .section-header p {
-      color: #ddd;
+      color: #555;
     }
-    
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    
+
     .testimonial-card {
-      background: rgba(255,255,255,0.1);
+      background: white;
       border-radius: 10px;
       padding: 30px;
       position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
-    
+
     .testimonial-card:before {
       content: '"';
       position: absolute;
       top: 20px;
       left: 20px;
       font-size: 6rem;
-      color: rgba(255,255,255,0.1);
+      color: rgba(0,0,0,0.05);
       font-family: serif;
     }
-    
-    .testimonial-text {
-      margin-bottom: 20px;
-      line-height: 1.6;
-      font-style: italic;
-    }
-    
-    .testimonial-author {
-      display: flex;
-      align-items: center;
+
+    .testimonial-text.truncated::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
     }
     
     .testimonial-author img {
@@ -697,15 +716,11 @@
     }
     
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
       .nav-links {
         position: fixed;
         top: 70px;
         left: 0;
-        background: var(--dark);
+        background: white;
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -715,24 +730,28 @@
         opacity: 0;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       }
-      
+
       .nav-links.active {
         transform: translateY(0);
         opacity: 1;
       }
-      
+
       .nav-links li {
         margin: 15px 0;
       }
-      
+
+      .nav-links a {
+        color: #000 !important;
+      }
+
       .hamburger {
         display: block;
       }
-      
+
       .section-header h2 {
         font-size: 2rem;
       }
-      
+
       .featured {
         transform: scale(1);
       }
@@ -961,7 +980,7 @@
         <p>Soy Sheila Rodero, guía en transformación física, emocional y energética. En mi centro trabajamos contigo para que eleves tu bienestar a todos los niveles: cuerpo, mente y conciencia.</p>
 
         <a href="#contacto" class="btn btn-primary btn-pulse">Valoración Gratuita</a>
-        <a href="#servicios" class="btn btn-secondary">Mis Servicios</a>
+        <a href="#servicios" class="btn btn-secondary" style="margin-top: 15px;">Mis Servicios</a>
       </div>
     </div>
   </section>
@@ -1038,58 +1057,59 @@
           <h2>Testimonios</h2>
           <p>Lo que dicen mis clientes sobre su experiencia trabajando conmigo</p>
         </div>
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <p class="testimonial-text">Entreno con Sheila desde hace casi 4 años. Me ha motivado, he mejorado físicamente y me siento bien conmigo misma. Es una entrenadora increíble, que te apoya tanto física como mentalmente. Justo lo que necesitaba.</p>
-            <div class="testimonial-author">
-              <img src="items/Fotos/Equipo_De_Viaje.png" alt="Cliente">
+        
+        <div class="testimonial-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px;">
+          <div class="testimonial-card" style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+            <p class="testimonial-text" style="flex-grow: 1; line-height: 1.6; margin-bottom: 20px;">Entreno con Sheila desde hace casi 4 años. Me ha motivado, he mejorado físicamente y me siento bien conmigo misma. Es una entrenadora increíble, que te apoya tanto física como mentalmente. Justo lo que necesitaba.</p>
+            <div class="testimonial-author" style="display: flex; align-items: center;">
+              <img src="items/Fotos/Equipo_De_Viaje.png" alt="Cliente" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
               <div class="author-info">
-                <h4>Equipo de Viaje</h4>  
+                <h4 style="margin-bottom: 5px;">Equipo de Viaje</h4>  
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">Llevo entrenando cinco años donde Sheila es totalmente diferente al ser más humano el cambio físico y psicológico es notable y ella es una gran profesional que la gusta y disfruta con su trabajo y se lo transmite a sus alumnos.</p>
-            <div class="testimonial-author">
-              <img src="items/Fotos/E.jpg" alt="Cliente">
+          <div class="testimonial-card" style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+            <p class="testimonial-text" style="flex-grow: 1; line-height: 1.6; margin-bottom: 20px;">Llevo entrenando cinco años donde Sheila es totalmente diferente al ser más humano el cambio físico y psicológico es notable y ella es una gran profesional que la gusta y disfruta con su trabajo y se lo transmite a sus alumnos.</p>
+            <div class="testimonial-author" style="display: flex; align-items: center;">
+              <img src="items/Fotos/E.jpg" alt="Cliente" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
               <div class="author-info">
-                <h4>Elisa Lopez Torrejon</h4>
+                <h4 style="margin-bottom: 5px;">Elisa Lopez Torrejon</h4>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">Sheila es una entrenadora muy completa. Sabe motivarte y lo que necesitas en cada momento tanto física como emocionalmente para cumplir tus objetivos.</p>
-            <div class="testimonial-author">
-              <img src="items/Fotos/K.png" alt="Cliente">
+          <div class="testimonial-card" style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+            <p class="testimonial-text" style="flex-grow: 1; line-height: 1.6; margin-bottom: 20px;">Sheila es una entrenadora muy completa. Sabe motivarte y lo que necesitas en cada momento tanto física como emocionalmente para cumplir tus objetivos.</p>
+            <div class="testimonial-author" style="display: flex; align-items: center;">
+              <img src="items/Fotos/K.png" alt="Cliente" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
               <div class="author-info">
-                <h4>Kina</h4>
+                <h4 style="margin-bottom: 5px;">Kina</h4>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">Tres años de entrenamiento con Sheila, una gran profesional, super preparada. Muy simpática y preocupada por todos sus alumnos</p>
-            <div class="testimonial-author">
-              <img src="items/Fotos/M.jpg" alt="Cliente">
+          <div class="testimonial-card" style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+            <p class="testimonial-text" style="flex-grow: 1; line-height: 1.6; margin-bottom: 20px;">Tres años de entrenamiento con Sheila, una gran profesional, super preparada. Muy simpática y preocupada por todos sus alumnos</p>
+            <div class="testimonial-author" style="display: flex; align-items: center;">
+              <img src="items/Fotos/M.jpg" alt="Cliente" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
               <div class="author-info">
-                <h4>MARI CARMEN UREÑA</h4>
+                <h4 style="margin-bottom: 5px;">MARI CARMEN UREÑA</h4>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">Trato inmejorable, las clases son duras pero no lo parece por el buen rollo que hay, encantada.</p>
-            <div class="testimonial-author">
-              <img src="items/Fotos/G.png" alt="Cliente">
+          <div class="testimonial-card" style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+            <p class="testimonial-text" style="flex-grow: 1; line-height: 1.6; margin-bottom: 20px;">Trato inmejorable, las clases son duras pero no lo parece por el buen rollo que hay, encantada.</p>
+            <div class="testimonial-author" style="display: flex; align-items: center;">
+              <img src="items/Fotos/G.png" alt="Cliente" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
               <div class="author-info">
-                <h4>Gema L</h4>
+                <h4 style="margin-bottom: 5px;">Gema L</h4>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">Escuela de entrenamiento espectacular dirigido por una profesional muy cualificada y excelente, con un trato personalizado.</p>
-            <div class="testimonial-author">
-              <img src="items/Fotos/A.jpg" alt="Cliente">
+          <div class="testimonial-card" style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+            <p class="testimonial-text" style="flex-grow: 1; line-height: 1.6; margin-bottom: 20px;">Escuela de entrenamiento espectacular dirigido por una profesional muy cualificada y excelente, con un trato personalizado.</p>
+            <div class="testimonial-author" style="display: flex; align-items: center;">
+              <img src="items/Fotos/A.jpg" alt="Cliente" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
               <div class="author-info">
-                <h4>Alba Martin Brito</h4>
+                <h4 style="margin-bottom: 5px;">Alba Martin Brito</h4>
               </div>
             </div>
           </div>
@@ -1099,26 +1119,23 @@
           <h3>Videos de Clientes</h3>
         </div>
         
-        <div class="youtube-testimonials">
-          <div class="youtube-grid">
-            <div class="youtube-video">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/EfLMqwYAFpA?si=nwAC-Im_B1KENUz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="youtube-video">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/n0LtaIWH_I0?si=nPwL7N6NitkzVEnJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="youtube-video">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/U7VNhCooQBQ?si=HAn_nRMqF4CQIHGN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="youtube-video">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/p0Gzw2f1Qkc?si=qxc9BIuP9WxT_6Wh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="youtube-video">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/52ybVHuVB3M?si=sI5UR2Vz3qN1tw0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+        <div class="youtube-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+          <div class="youtube-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/EfLMqwYAFpA?si=nwAC-Im_B1KENUz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;"></iframe>
+          </div>
+          <div class="youtube-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/n0LtaIWH_I0?si=nPwL7N6NitkzVEnJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;"></iframe>
+          </div>
+          <div class="youtube-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/U7VNhCooQBQ?si=HAn_nRMqF4CQIHGN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;"></iframe>
+          </div>
+          <div class="youtube-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/p0Gzw2f1Qkc?si=qxc9BIuP9WxT_6Wh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;"></iframe>
+          </div>
+          <div class="youtube-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/52ybVHuVB3M?si=sI5UR2Vz3qN1tw0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;"></iframe>
           </div>
         </div>
-      </div>
       </div>
     </section>
 
@@ -1193,87 +1210,89 @@
         <h2>Contacto</h2>
         <p>¿Listo para comenzar tu transformación? Contáctame ahora</p>
       </div>
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3>Estoy aquí para ayudarte</h3>
-          <p>Si tienes alguna pregunta o estás listo para comenzar tu viaje fitness, no dudes en contactarme por cualquiera de estas vías.</p>
+      
+      <div class="contact-content" style="display: flex; flex-wrap: wrap; gap: 30px;">
+        <div class="contact-info" style="flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary);">Estoy aquí para ayudarte</h3>
+          <p style="margin-bottom: 20px; line-height: 1.6; color: #555;">Si tienes alguna pregunta o estás listo para comenzar tu viaje fitness, no dudes en contactarme por cualquiera de estas vías.</p>
           
-          <div class="contact-item">
-            <div class="contact-icon">
+          <div class="contact-item" style="display: flex; margin-bottom: 20px;">
+            <div class="contact-icon" style="width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 15px; flex-shrink: 0;">
               <i class="fas fa-map-marker-alt"></i>
             </div>
-            <div class="contact-details">
-              <h4>Ubicación</h4>
-              <p>Calle Francisco de Goya, 19, 45224 Seseña, Toledo</p>
+            <div class="contact-details" style="flex: 1;">
+              <h4 style="margin-bottom: 5px;">Ubicación</h4>
+              <p style="color: #666;">Calle Francisco de Goya, 19, 45224 Seseña, Toledo</p>
             </div>
           </div>
           
-          <div class="contact-item">
-            <div class="contact-icon">
+          <div class="contact-item" style="display: flex; margin-bottom: 20px;">
+            <div class="contact-icon" style="width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 15px; flex-shrink: 0;">
               <i class="fas fa-phone"></i>
             </div>
-            <div class="contact-details">
-              <h4>Teléfono</h4>
-              <p>+34 635 613 956</p>
+            <div class="contact-details" style="flex: 1;">
+              <h4 style="margin-bottom: 5px;">Teléfono</h4>
+              <p style="color: #666;">+34 635 613 956</p>
             </div>
           </div>
           
-          <div class="contact-item">
-            <div class="contact-icon">
+          <div class="contact-item" style="display: flex; margin-bottom: 20px;">
+            <div class="contact-icon" style="width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 15px; flex-shrink: 0;">
               <i class="fas fa-envelope"></i>
             </div>
-            <div class="contact-details">
-              <h4>Email</h4>
-              <p>info@sheilarodero.com</p>
+            <div class="contact-details" style="flex: 1;">
+              <h4 style="margin-bottom: 5px;">Email</h4>
+              <p style="color: #666;">info@sheilarodero.com</p>
             </div>
           </div>
           
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-clock"></i>
-            </div>
-          </div>
-          
-          <div class="social-links">
-            <a href="https://www.instagram.com/sheilarodero_gym"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@sheilaroderofitt"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@sheilarodero"><i class="fab fa-youtube"></i></a>
+          <div class="social-links" style="display: flex; margin-top: 20px;">
+            <a href="https://www.instagram.com/sheilarodero_gym" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--primary); border-radius: 50%; margin-right: 10px; color: white; font-size: 1.2rem; transition: all 0.3s ease;">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@sheilaroderofitt" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--primary); border-radius: 50%; margin-right: 10px; color: white; font-size: 1.2rem; transition: all 0.3s ease;">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@sheilarodero" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--primary); border-radius: 50%; margin-right: 10px; color: white; font-size: 1.2rem; transition: all 0.3s ease;">
+              <i class="fab fa-youtube"></i>
+            </a>
           </div>
         </div>
         
-        <div class="contact-form">
+        <div class="contact-form" style="flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary);">Envíame un mensaje</h3>
           <form action="https://formspree.io/f/tu-id-de-formspree" method="POST">
-            <div class="form-group">
-              <label for="name">Nombre Completo</label>
-              <input type="text" id="name" name="name" class="form-control" required>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="name" style="display: block; margin-bottom: 5px; font-weight: 500;">Nombre Completo</label>
+              <input type="text" id="name" name="name" class="form-control" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: all 0.3s ease;">
             </div>
             
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" class="form-control" required>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="email" style="display: block; margin-bottom: 5px; font-weight: 500;">Email</label>
+              <input type="email" id="email" name="email" class="form-control" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: all 0.3s ease;">
             </div>
             
-            <div class="form-group">
-              <label for="phone">Teléfono</label>
-              <input type="tel" id="phone" name="phone" class="form-control">
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="phone" style="display: block; margin-bottom: 5px; font-weight: 500;">Teléfono</label>
+              <input type="tel" id="phone" name="phone" class="form-control" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: all 0.3s ease;">
             </div>
             
-            <div class="form-group">
-              <label for="service">Servicio de Interés</label>
-              <select id="service" name="service" class="form-control" required>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="service" style="display: block; margin-bottom: 5px; font-weight: 500;">Servicio de Interés</label>
+              <select id="service" name="service" class="form-control" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: all 0.3s ease;">
                 <option value="">Selecciona un servicio</option>
-                <option value="personal">Entrenamieanto físico funcional y consciente</option>
+                <option value="personal">Entrenamiento físico funcional y consciente</option>
                 <option value="nutrition">Nutrición integrativa</option>
                 <option value="group">Elevación de conciencia</option>
               </select>
             </div>
             
-            <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="message" class="form-control" required></textarea>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="message" style="display: block; margin-bottom: 5px; font-weight: 500;">Mensaje</label>
+              <textarea id="message" name="message" class="form-control" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: all 0.3s ease; resize: vertical; min-height: 150px;"></textarea>
             </div>
             
-            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            <button type="submit" class="submit-btn" style="background: var(--primary); color: white; border: none; padding: 12px 20px; font-size: 1rem; font-weight: 600; border-radius: 5px; cursor: pointer; transition: all 0.3s ease; width: 100%;">Enviar Mensaje</button>
           </form>
         </div>
       </div>
